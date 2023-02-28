@@ -5,7 +5,7 @@
         "stylelint-config-prettier",
         "stylelint-config-styled-components"
     ],
-    "files": ["**/*.style.+(js|ts)"],
+    "files": ["src/**/*.style.{js,ts}"],
     "customSyntax": "postcss",
     "plugins": ["stylelint-order", "stylelint-prettier"],
     "processors": [

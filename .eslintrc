@@ -133,7 +133,6 @@
                         "private-static-field",
                         "public-abstract-field",
                         "protected-abstract-field",
-                        "private-abstract-field",
                         "field",
 
                         // Methods
@@ -145,7 +144,6 @@
                         "private-static-method",
                         "public-abstract-method",
                         "protected-abstract-method",
-                        "private-abstract-method",
                         "method"
                     ],
                     "order": "alphabetically"
