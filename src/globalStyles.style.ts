@@ -9,7 +9,6 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         min-height: 100%;
-        width: 100%;
         overflow-x: hidden;
     }
 
