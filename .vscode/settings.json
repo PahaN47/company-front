@@ -1,0 +1,6 @@
+{
+    "stylelint.snippet": ["css", "less", "postcss", "typescriptreact"],
+    "stylelint.validate": ["css", "less", "postcss", "typescriptreact"],
+    "react-create-files-helper.templateType": "styled-components",
+    "react-create-files-helper.withStories": true
+}

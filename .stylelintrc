@@ -1,0 +1,73 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-rational-order",
+        "stylelint-config-prettier",
+        "stylelint-config-styled-components"
+    ],
+    "files": ["**/*.style.+(js|ts)"],
+    "customSyntax": "postcss",
+    "plugins": ["stylelint-order", "stylelint-prettier"],
+    "processors": [
+        [
+            "stylelint-processor-styled-components",
+            {
+                "moduleName": "styled-components",
+                "importName": "default",
+                "strict": false,
+                "ignoreFiles": [],
+                "parserPlugins": [
+                    "tsx",
+                    ["decorators", { "decoratorsBeforeExport": true }],
+                    "classProperties",
+                    "exportExtensions",
+                    "functionBind",
+                    "functionSent"
+                ]
+            }
+        ]
+    ],
+    "defaultSeverity": "warning",
+    "rules": {
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                "ignorePseudoClasses": ["global", "input-placeholder"]
+            }
+        ],
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": ["input-placeholder"]
+            }
+        ],
+        "color-hex-case": "lower",
+        "color-hex-length": "long",
+        "indentation": 4,
+        "no-duplicate-selectors": true,
+        "at-rule-no-unknown": null,
+        "value-no-vendor-prefix": [
+            true,
+            {
+                "ignoreValues": ["box"]
+            }
+        ],
+        "selector-class-pattern": null,
+        "value-keyword-case": ["lower", { "ignoreKeywords": ["dummyValue", "$dummyValue"] }],
+        "declaration-empty-line-before": null,
+        "no-descending-specificity": null,
+        "keyframes-name-pattern": "",
+        "selector-type-case": [
+            "lower",
+            {
+                "ignoreTypes": ["dummyValue", "$dummyValue"]
+            }
+        ],
+        "selector-type-no-unknown": [
+            true,
+            {
+                "ignoreTypes": ["dummyValue", "$dummyValue", "/-styled-mixin\\d*/"]
+            }
+        ]
+    }
+}
