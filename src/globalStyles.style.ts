@@ -2,13 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     html {
-        margin: 0;
         height: 100%;
+        margin: 0;
     }
 
     body {
-        margin: 0;
         min-height: 100%;
+        margin: 0;
         overflow-x: hidden;
     }
 
@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     ul {
-       padding-left: 0; 
+        padding-left: 0; 
     }
 
     li {
