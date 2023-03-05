@@ -2,5 +2,8 @@
     "stylelint.snippet": ["postcss", "typescript", "js"],
     "stylelint.validate": ["postcss", "typescript", "js"],
     "react-create-files-helper.templateType": "styled-components",
-    "react-create-files-helper.withStories": true
+    "react-create-files-helper.withStories": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    }
 }
