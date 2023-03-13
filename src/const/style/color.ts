@@ -1,0 +1,17 @@
+export enum Color {
+    BLACK = '#000000',
+    BLACK_40 = '#00000066',
+    ERROR = '#ff0d47',
+    MAIN = '#a3e8ff',
+    MAIN_15 = '#a3e8ff26',
+    MAIN_40 = '#a3e8ff66',
+    MAIN_DARK = '#00a6df',
+    MAIN_GRADIENT = 'linear-gradient(100.18deg, #00a6df 3.7%, #a3e8ff 99.38%)',
+    MAIN_GRADIENT_FOCUS = 'linear-gradient(121.71deg, #00a6df 54.6%, #a3e8ff 109.55%)',
+    MAIN_GRADIENT_HOVER = 'linear-gradient(158.55deg, #00a6df -13.76%, #a3e8ff 56.64%)',
+    MAIN_LIGHT = '#effcff',
+    MAIN_LIGHT_FOCUS = '#ddf5fb',
+    MAIN_LIGHT_HOVER = '#f7fdff',
+    SECOND_LIGHT = '#fcfcd4',
+    WHITE = '#ffffff',
+}
