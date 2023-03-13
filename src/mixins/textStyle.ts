@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 import { TextStyle } from '~/types';
 
-export const typography = (style: TextStyle) => {
+export const textStyle = (style: TextStyle) => {
     switch (style) {
         case 'LARGEST':
             return css`

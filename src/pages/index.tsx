@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { CustomButton } from '~/components/CustomButton';
 import { CustomLink } from '~/components/CustomLink';
 
 const BlankPage = () => (
@@ -12,9 +13,16 @@ const BlankPage = () => (
             <br />В общем, клева, че.
         </p>
         <p>Надо эту страницу удалить будет, если че...</p>
-        <CustomLink href="https://google.com">
-            <button>Меня никто не любит, не ценит, не уважает!</button>
-        </CustomLink>
+        <CustomLink href="https://google.com">Меня никто не любит, не ценит, не уважает!</CustomLink>
+        <CustomButton customStyle="primary" size="large">
+            УВАЖАЮ!!!!!!
+        </CustomButton>
+        <CustomButton customStyle="secondary" size="medium">
+            ОЧЕНЬ!!!!!
+        </CustomButton>
+        <CustomButton customStyle="outline" size="small">
+            СИЛЬНО!!!!
+        </CustomButton>
         <div>
             <div style={{ fontWeight: 400 }}>Текст</div>
             <div style={{ fontWeight: 500 }}>Текст</div>
