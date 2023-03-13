@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start -H 127.0.0.1",
         "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
     },
     "dependencies": {
         "@types/node": "18.14.2",
@@ -24,8 +26,18 @@
         "styled-components": "^5.3.6"
     },
     "devDependencies": {
+        "@babel/core": "^7.21.0",
+        "@storybook/addon-actions": "^6.5.16",
+        "@storybook/addon-essentials": "^6.5.16",
+        "@storybook/addon-interactions": "^6.5.16",
+        "@storybook/addon-links": "^6.5.16",
+        "@storybook/builder-webpack5": "^6.5.16",
+        "@storybook/manager-webpack5": "^6.5.16",
+        "@storybook/react": "^6.5.16",
+        "@storybook/testing-library": "0.0.13",
         "@typescript-eslint/eslint-plugin": "^5.54.0",
         "@typescript-eslint/parser": "^5.54.0",
+        "babel-loader": "^8.3.0",
         "eslint": "^8.35.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-eslint-comments": "^3.2.0",
