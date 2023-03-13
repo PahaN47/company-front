@@ -15,6 +15,14 @@ const BlankPage = () => (
         <CustomLink href="https://google.com">
             <button>Меня никто не любит, не ценит, не уважает!</button>
         </CustomLink>
+        <div>
+            <div style={{ fontWeight: 400 }}>Текст</div>
+            <div style={{ fontWeight: 500 }}>Текст</div>
+            <div style={{ fontWeight: 600 }}>Текст</div>
+            <div style={{ fontWeight: 700 }}>Текст</div>
+            <div style={{ fontWeight: 800 }}>Текст</div>
+            <div style={{ fontWeight: 900 }}>Текст</div>
+        </div>
     </div>
 );
 
