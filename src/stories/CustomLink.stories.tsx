@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { CustomLink } from './CustomLink';
-import { CustomLinkProps } from './CustomLink.types';
+import { CustomLink } from '~/components/CustomLink/CustomLink';
+import { CustomLinkProps } from '~/components/CustomLink/CustomLink.types';
 
 export default {
     title: 'Components/CustomLink',
