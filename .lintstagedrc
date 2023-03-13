@@ -3,5 +3,5 @@
         "eslint --max-warnings=0 --fix \"{src,pages,.storybook}/**/*.+(js|jsx|ts|tsx|json)\"",
         "prettier --write \"{src,pages,.storybook}/**/*.+(js|jsx|ts|tsx|json)\""
     ],
-    "src/**/*.style.{js,ts}": ["stylelint --max-warnings=0 \"src/**/*.style.{js,ts}\""]
+    "src/**/*.style.{js,ts}": ["stylelint --max-warnings=0 --allow-empty-input \"src/**/*.style.{js,ts}\""]
 }
