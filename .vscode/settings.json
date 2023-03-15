@@ -4,6 +4,6 @@
     "react-create-files-helper.templateType": "styled-components",
     "react-create-files-helper.withStories": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll.eslint": true
     }
 }
