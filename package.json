@@ -12,6 +12,10 @@
         "build-storybook": "build-storybook"
     },
     "dependencies": {
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@mui/material": "^5.11.14",
+        "@mui/styled-engine-sc": "^5.11.11",
         "@types/node": "18.14.2",
         "@types/react": "18.0.28",
         "@types/react-dom": "18.0.11",
@@ -48,6 +52,7 @@
         "eslint-plugin-unused-imports": "^2.0.0",
         "husky": "^8.0.3",
         "prettier": "^2.8.4",
+        "react-docgen-typescript-plugin": "^1.0.5",
         "stylelint": "^14.8.2",
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-rational-order": "^0.1.2",
