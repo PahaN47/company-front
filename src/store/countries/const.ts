@@ -1,0 +1,1 @@
+export const COUNTRIES_SLICE_NAME = 'COUNTRIES';
