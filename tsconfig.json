@@ -18,7 +18,7 @@
         "typeRoots": ["@types", "./node_modules/@types"],
         "incremental": true
     },
-    "include": ["next-env.d.ts", "src"],
+    "include": ["@types", "next-env.d.ts", "src"],
     "extends": "./tsconfig.paths.json",
     "exclude": ["node_modules"]
 }

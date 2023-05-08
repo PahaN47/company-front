@@ -2,14 +2,20 @@ import React from 'react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
 import { GlobalStyles } from '../src/globalStyles.style';
+import { Provider } from 'react-redux';
+import store from '../src/store';
+import { ThemeProvider } from '@mui/material';
+import { theme } from '../src/const';
 
 export const decorators = [
     (Story) => {
         return (
-            <>
-                <GlobalStyles />
-                <Story />
-            </>
+            <Provider store={store}>
+                <ThemeProvider theme={theme}>
+                    <GlobalStyles />
+                    <Story />
+                </ThemeProvider>
+            </Provider>
         );
     },
 ];
