@@ -50,6 +50,14 @@ export const GlobalStyles = createGlobalStyle`
         min-height: 100%;
         margin: 0;
         overflow-x: hidden;
+
+        & > div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 1px;
+            left: 0;
+        }
     }
 
     div, 

@@ -31,11 +31,11 @@ export const matchesSlice = createSlice({
             state.incoming = payload;
             state.doUpdateOutgoing = false;
         });
-        builder.addMatcher(isAnyOf(accept.fulfilled, reject.fulfilled), (state, { payload }) => {
-            state.incoming = state.incoming?.filter((match) => match.id !== payload.id);
-        });
         builder.addCase(create.fulfilled, (state, { payload }) => {
             state.outgoing = [payload, ...(state.outgoing ?? [])];
+        });
+        builder.addMatcher(isAnyOf(accept.fulfilled, reject.fulfilled), (state, { payload }) => {
+            state.incoming = state.incoming?.filter((match) => match.id !== payload.id);
         });
     },
 });

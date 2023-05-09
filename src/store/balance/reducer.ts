@@ -25,12 +25,12 @@ export const balanceSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
+        builder.addCase(makePurchase.fulfilled, (state) => {
+            state.isPurchaseSuccessful = true;
+        });
         builder.addMatcher(isAnyOf(getOwn.fulfilled, add.fulfilled), (state, { payload }) => {
             state.own = payload;
             state.doUpdateBalance = false;
-        });
-        builder.addCase(makePurchase.fulfilled, (state) => {
-            state.isPurchaseSuccessful = true;
         });
     },
 });

@@ -14,13 +14,6 @@ export const authSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addMatcher(
-            isAnyOf(cookieLogin.fulfilled, login.fulfilled, register.fulfilled),
-            (state, { payload }) => {
-                state.doCookieLogin = false;
-                state.user = payload;
-            },
-        );
         builder.addCase(cookieLogin.rejected, (state) => {
             state.doCookieLogin = false;
         });
@@ -28,6 +21,13 @@ export const authSlice = createSlice({
             state.doCookieLogin = false;
             state.user = undefined;
         });
+        builder.addMatcher(
+            isAnyOf(cookieLogin.fulfilled, login.fulfilled, register.fulfilled),
+            (state, { payload }) => {
+                state.doCookieLogin = false;
+                state.user = payload;
+            },
+        );
     },
 });
 

@@ -14,11 +14,11 @@ export const profileSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addMatcher(isAnyOf(getOwn.fulfilled, update.fulfilled), (state, { payload }) => {
-            state.own = payload;
-        });
         builder.addCase(get.fulfilled, (state, { payload }) => {
             state.other = payload;
+        });
+        builder.addMatcher(isAnyOf(getOwn.fulfilled, update.fulfilled), (state, { payload }) => {
+            state.own = payload;
         });
     },
 });
