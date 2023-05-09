@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { PRESS_TRANSITION_TIME } from './FancyButton.const';
 import { FancyButtonType } from './FancyButton.types';
 
 import { CheckIconPath, CrossIconPath } from '~/assets/img';
@@ -14,14 +15,14 @@ export const ContainerStyled = styled.div`
     aspect-ratio: 10 / 11;
 `;
 
-export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButtonType }>`
+export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButtonType; pressed: boolean }>`
     position: relative;
     width: 100%;
     height: 100%;
     padding: 0;
     border: none;
     border-radius: 9999px;
-    transition: all 0.3s;
+    transition: all ${PRESS_TRANSITION_TIME}ms;
 
     &::before {
         position: absolute;
@@ -33,17 +34,8 @@ export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButton
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 50%;
-        transition: all 0.3s;
+        transition: all ${PRESS_TRANSITION_TIME}ms;
         content: '';
-    }
-
-    &:active {
-        height: calc(10 / 11 * 100%);
-        border-radius: 50%;
-
-        &::before {
-            height: 100%;
-        }
     }
 
     ${({ buttonType }) => css`
@@ -55,4 +47,15 @@ export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButton
             background-size: ${buttonType === 'cross' ? (5 / 12) * 100 : (19 / 30) * 100}%;
         }
     `}
+
+    ${({ pressed }) =>
+        pressed &&
+        css`
+            height: calc(10 / 11 * 100%);
+            border-radius: 50%;
+
+            &::before {
+                height: 100%;
+            }
+        `}
 `;

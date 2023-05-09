@@ -1,0 +1,1 @@
+export const PRESS_TRANSITION_TIME = 300;
