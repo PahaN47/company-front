@@ -1,0 +1,2 @@
+export const STACK_ANIMATION_LENGTH = 500;
+export const STACK_ANIMATION_DELAY = 300;

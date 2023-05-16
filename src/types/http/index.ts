@@ -4,3 +4,5 @@ export type PaginatedDataResponse<T> = {
     previous: string | null;
     results: T[];
 };
+
+export type FetchStatus = 'idle' | 'pending' | 'fulfilled' | 'rejected';

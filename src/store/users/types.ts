@@ -1,4 +1,5 @@
 import { Country } from '~/store/countries';
+import { FetchStatus } from '~/types';
 
 export type User = {
     age: number;
@@ -19,7 +20,9 @@ export type UserQuery = {
 
 export type UsersState = {
     currentPage: number;
+    displayList: User[];
+    fetchList?: User[];
+    fetchStatus: FetchStatus;
     hasNextPage: boolean;
     hasPrevPage: boolean;
-    list?: User[];
 };

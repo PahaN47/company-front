@@ -19,7 +19,7 @@ export const cookieLogin = createAsyncThunk<AuthUser, undefined, AsyncThunkConfi
 export const login = createAsyncThunk<AuthUser, LoginPayload, AsyncThunkConfig>(
     `${AUTH_SLICE_NAME}/LOGIN`,
     async (payload) => {
-        const { data } = await axiosInstance.post<AuthUser>(`${basePath}/login`, { data: payload });
+        const { data } = await axiosInstance.post<AuthUser>(`${basePath}/login`, payload);
         return data;
     },
 );
@@ -27,7 +27,7 @@ export const login = createAsyncThunk<AuthUser, LoginPayload, AsyncThunkConfig>(
 export const register = createAsyncThunk<AuthUser, RegisterPayload, AsyncThunkConfig>(
     `${AUTH_SLICE_NAME}/REGISTER`,
     async (payload) => {
-        const { data } = await axiosInstance.post<AuthUser>(`${basePath}/register`, { data: payload });
+        const { data } = await axiosInstance.post<AuthUser>(`${basePath}/register`, payload);
         return data;
     },
 );
