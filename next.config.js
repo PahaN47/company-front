@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+    reactStrictMode: false,
     assetPrefix: undefined,
     webpack: (config) => {
         config.module.rules.push({

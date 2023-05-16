@@ -22,7 +22,7 @@ export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButton
     padding: 0;
     border: none;
     border-radius: 9999px;
-    transition: all ${PRESS_TRANSITION_TIME}ms;
+    transition: height ${PRESS_TRANSITION_TIME}ms;
 
     &::before {
         position: absolute;
@@ -30,11 +30,10 @@ export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButton
         top: 0;
         right: 0;
         width: 100%;
-        height: calc(10 / 11 * 100%);
+        aspect-ratio: 1 / 1;
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 50%;
-        transition: all ${PRESS_TRANSITION_TIME}ms;
         content: '';
     }
 
@@ -53,9 +52,5 @@ export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButton
         css`
             height: calc(10 / 11 * 100%);
             border-radius: 50%;
-
-            &::before {
-                height: 100%;
-            }
         `}
 `;

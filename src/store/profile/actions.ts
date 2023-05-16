@@ -24,7 +24,7 @@ export const get = createAsyncThunk<Profile, number, AsyncThunkConfig>(`${PROFIL
 export const update = createAsyncThunk<Profile, UpdateProfilePayload, AsyncThunkConfig>(
     `${PROFILE_SLICE_NAME}/update`,
     async ({ id, ...profile }) => {
-        const { data } = await axiosInstance.patch<Profile>(`${basePath}/${id}`, { data: profile });
+        const { data } = await axiosInstance.patch<Profile>(`${basePath}/${id}`, profile);
         return data;
     },
 );

@@ -11,7 +11,7 @@ const basePath = '/matches';
 export const create = createAsyncThunk<Match, CreateMatchPayload, AsyncThunkConfig>(
     `${MATCHES_SLICE_NAME}/CREATE`,
     async (payload) => {
-        const { data } = await axiosInstance.post<Match>(`${basePath}`, { data: payload });
+        const { data } = await axiosInstance.post<Match>(`${basePath}`, payload);
         return data;
     },
 );

@@ -1,31 +1,45 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Button } from '@mui/material';
 
-import { ButtonStyled, HeaderStyled } from './Header.style';
+import { ButtonStyled, CustomAvatarStyled, HeaderStyled } from './Header.style';
 
-import { CustomAvatar } from '~/components/CustomAvatar';
 import { CustomLink } from '~/components/CustomLink';
+import { useAuth } from '~/hooks/useAuth';
 import { useAppDispatch, useAppSelector } from '~/store';
+import { AuthAction } from '~/store/auth';
 import { ProfileAction } from '~/store/profile';
 
 export const Header = () => {
     const dispatch = useAppDispatch();
-    const { user } = useAppSelector((store) => store.auth);
+
+    const { id } = useAuth();
     const { own: profile } = useAppSelector((store) => store.profile);
-    const isAuth = !!user;
+    const { doCookieLogin } = useAppSelector((state) => state.auth);
+    const isAuth = !!id;
 
     useEffect(() => {
-        if (user?.id) {
-            void dispatch(ProfileAction.getOwn(user.id));
+        if (!id && doCookieLogin) {
+            void dispatch(AuthAction.cookieLogin());
         }
-    }, [dispatch, user?.id]);
+    }, [dispatch, doCookieLogin, id]);
+
+    useEffect(() => {
+        if (id) {
+            void dispatch(ProfileAction.getOwn(id));
+        }
+    }, [dispatch, id]);
+
+    // remove this
+    const handleLoginClick = useCallback(() => {
+        void dispatch(AuthAction.login({ email: 'sas@sas.com', password: 'sas' }));
+    }, [dispatch]);
 
     return (
         <HeaderStyled>
             {profile ? (
-                <CustomAvatar src={profile.avatar} href="/profile" />
+                <CustomAvatarStyled src={profile.avatar} href="/profile" />
             ) : (
-                <ButtonStyled variant="contained" href="/login">
+                <ButtonStyled variant="contained" onClick={handleLoginClick}>
                     Войти
                 </ButtonStyled>
             )}

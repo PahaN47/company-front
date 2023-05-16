@@ -17,5 +17,6 @@ export enum Color {
     NEGATIVE_DARK = '#e05452',
     NEGATIVE_LIGHT = '#ffc5c4',
     SECOND_LIGHT = '#fcfcd4',
+    SHADOW_1 = '7px 6px 13px rgba(0, 0, 0, 0.1)',
     WHITE = '#ffffff',
 }

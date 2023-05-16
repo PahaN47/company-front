@@ -18,13 +18,13 @@ export const getOwn = createAsyncThunk<Balance, undefined, AsyncThunkConfig>(
 );
 
 export const add = createAsyncThunk<Balance, number, AsyncThunkConfig>(`${BALANCE_SLICE_NAME}/ADD`, async (amount) => {
-    const { data } = await axiosInstance.post<Balance>(`${basePath}/add`, { data: { amount } });
+    const { data } = await axiosInstance.post<Balance>(`${basePath}/add`, { amount });
     return data;
 });
 
 export const makePurchase = createAsyncThunk<void, PurchasePayload, AsyncThunkConfig>(
     `${BALANCE_SLICE_NAME}/MAKE_PURCHASE`,
     async (payload) => {
-        await axiosInstance.post(`${purchaseBasePath}`, { data: payload });
+        await axiosInstance.post(`${purchaseBasePath}`, payload);
     },
 );
