@@ -10,7 +10,10 @@ export type Match = {
     status: string;
 };
 
-export type CreateMatchPayload = Pick<Match, 'initiator' | 'reciever'>;
+export type CreateMatchPayload = {
+    initiator: number;
+    reciever: number;
+};
 
 export type MatchesState = {
     doUpdateIncoming: boolean;
