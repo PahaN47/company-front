@@ -1,8 +1,12 @@
+import { Profile } from '~/store/profile';
+
+export type MatchUser = Pick<Profile, 'id' | 'avatar' | 'firstName' | 'lastName'>;
+
 export type Match = {
     date: Date;
     id: number;
-    initiator: number;
-    reciever: number;
+    initiator: MatchUser;
+    reciever: MatchUser;
     status: string;
 };
 

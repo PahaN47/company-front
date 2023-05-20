@@ -7,7 +7,7 @@ export const CustomAvatar = ({ src, onClick, href, className }: CustomAvatarProp
     return (
         <ContainerStyled className={className} onClick={onClick}>
             {href && <CustomLinkStyled href={href} />}
-            <ImageStyled src={src} />
+            {src && <ImageStyled src={src} />}
         </ContainerStyled>
     );
 };

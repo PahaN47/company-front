@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import {
     AvatarBorderStyled,
     AvatarContainerStyled,
-    AvatarInnerContainerStyled,
     AvatarStyled,
     BackButtonStyled,
     BasePageStyled,
@@ -54,9 +53,7 @@ export const ProfilePage = () => {
             )}
             <ProfileContainerStyled>
                 <AvatarContainerStyled>
-                    <AvatarInnerContainerStyled>
-                        <AvatarStyled src={user?.avatar} />
-                    </AvatarInnerContainerStyled>
+                    <AvatarStyled src={user?.avatar} />
                     <AvatarBorderStyled>
                         <circle cx="50%" cy="50%" r="48.125%" />
                         <circle cx="50%" cy="50%" r="50%" />

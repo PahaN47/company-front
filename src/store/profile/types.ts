@@ -12,7 +12,7 @@ export type Profile = {
     id: number;
     lastName?: string;
     phone?: string;
-    timezone: number;
+    timezone?: number;
 };
 
 export type UpdateProfilePayload = Partial<Omit<Profile, 'id' | 'gifts'>> & { id: number };

@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import styled from 'styled-components';
 
 import { BasePage } from '~/components/BasePage';
+import { CustomAvatar } from '~/components/CustomAvatar';
 import { Color } from '~/const';
 import { textStyle } from '~/mixins';
 
@@ -50,20 +51,8 @@ export const AvatarBorderStyled = styled.svg`
     }
 `;
 
-export const AvatarInnerContainerStyled = styled.div`
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
-`;
-
-export const AvatarStyled = styled.img`
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    object-fit: cover;
-    overflow: hidden;
+export const AvatarStyled = styled(CustomAvatar)`
+    width: 100%;
 `;
 
 export const ProfileContainerStyled = styled.div`

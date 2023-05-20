@@ -28,7 +28,7 @@ export const matchesSlice = createSlice({
             state.doUpdateIncoming = false;
         });
         builder.addCase(getOutgoing.fulfilled, (state, { payload }) => {
-            state.incoming = payload;
+            state.outgoing = payload;
             state.doUpdateOutgoing = false;
         });
         builder.addCase(create.fulfilled, (state, { payload }) => {

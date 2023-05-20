@@ -11,7 +11,7 @@ export const ContainerStyled = styled.div`
     width: 50px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: ${Color.BLACK_25};
+    background: linear-gradient(${Color.BLACK_25}, ${Color.BLACK_25}), ${Color.WHITE};
     border-radius: 50%;
 `;
 
@@ -24,5 +24,5 @@ export const CustomLinkStyled = styled(CustomLink)`
 export const ImageStyled = styled.img`
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 `;
