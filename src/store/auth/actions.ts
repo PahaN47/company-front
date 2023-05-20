@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import dayjs from 'dayjs';
 
 import { AUTH_SLICE_NAME } from './const';
 import { AuthUser, LoginPayload, RegisterPayload } from './types';
@@ -26,8 +27,9 @@ export const login = createAsyncThunk<AuthUser, LoginPayload, AsyncThunkConfig>(
 
 export const register = createAsyncThunk<AuthUser, RegisterPayload, AsyncThunkConfig>(
     `${AUTH_SLICE_NAME}/REGISTER`,
-    async (payload) => {
-        const { data } = await axiosInstance.post<AuthUser>(`${basePath}/register`, payload);
+    async ({ birthDate, ...payload }) => {
+        const dateStr = dayjs(birthDate).format('YYYY-MM-DD');
+        const { data } = await axiosInstance.post<AuthUser>(`${basePath}/register`, { birthDate: dateStr, ...payload });
         return data;
     },
 );

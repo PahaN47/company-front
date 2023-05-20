@@ -5,11 +5,13 @@ import { BasePageProps } from './BasePage.types';
 
 import { Header } from '~/components/Header';
 
-export const BasePage = ({ className, background, children }: BasePageProps) => {
+export const BasePage = ({ className, background, children, scrollable = true }: BasePageProps) => {
     return (
         <ContainerStyled background={background}>
             <Header />
-            <InnerContainerStyled className={className}>{children}</InnerContainerStyled>
+            <InnerContainerStyled className={className} scrollable={scrollable}>
+                {children}
+            </InnerContainerStyled>
         </ContainerStyled>
     );
 };

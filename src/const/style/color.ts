@@ -13,6 +13,7 @@ export enum Color {
     MAIN_LIGHT = '#effcff',
     MAIN_LIGHT_FOCUS = '#ddf5fb',
     MAIN_LIGHT_HOVER = '#f7fdff',
+    MAIN_SEMI_DARK = '#52C7EF',
     MAIN_SEMI_LIGHT = '#c9f2ff',
     NEGATIVE_DARK = '#e05452',
     NEGATIVE_LIGHT = '#ffc5c4',

@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 
+import { CustomLink } from '~/components/CustomLink';
 import { Color } from '~/const';
 import { textStyle } from '~/mixins';
 
 export const ContainerStyled = styled.div<{ zIndex?: number }>`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -34,4 +36,12 @@ export const DecriptionStyled = styled.div`
     align-items: center;
     justify-content: center;
     height: calc(142 / 500 * 100%);
+`;
+
+export const ProfileLinkStyled = styled(CustomLink)`
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 `;

@@ -1,9 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import MailIcon from '@mui/icons-material/Mail';
 
 import { STACK_ANIMATION_DELAY, STACK_ANIMATION_LENGTH } from './SearchPage.const';
-import { BasePageStyled, FancyButtonStyled } from './SearchPage.style';
+import { BasePageStyled, CustomLinkStyled, FancyButtonStyled, HeaderStyled } from './SearchPage.style';
 
 import { UserStack } from '~/components/UserStack';
+import { MATCHES_PAGE_URL } from '~/const';
 import { useAuth } from '~/hooks/useAuth';
 import { useUserList } from '~/hooks/useUserList';
 import { useAppDispatch } from '~/store';
@@ -52,7 +54,12 @@ export const SearchPage = () => {
     );
 
     return (
-        <BasePageStyled>
+        <BasePageStyled scrollable={false}>
+            <HeaderStyled>
+                <CustomLinkStyled href={MATCHES_PAGE_URL}>
+                    <MailIcon />
+                </CustomLinkStyled>
+            </HeaderStyled>
             <FancyButtonStyled onClick={handleRejectClick} buttonType="cross" disabled={disableButtons} />
             <UserStack
                 users={userList}
