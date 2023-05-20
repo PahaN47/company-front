@@ -12,6 +12,7 @@ import {
 
 import { LogoImage } from '~/assets/img';
 import { CustomLink } from '~/components/CustomLink';
+import { REGISTER_PAGE_URL } from '~/const';
 
 export const HomePage = () => {
     return (
@@ -23,7 +24,7 @@ export const HomePage = () => {
                     <SubtitleStyled>
                         Здесь мы поможем вам обрести новые знакомства, найти интересных собеседников и новых друзей!
                     </SubtitleStyled>
-                    <CustomLink href={'/login'}>
+                    <CustomLink href={REGISTER_PAGE_URL}>
                         <Button variant="outlined" size="large">
                             Зарегистрироваться
                         </Button>
