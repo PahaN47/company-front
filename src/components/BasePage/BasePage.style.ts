@@ -20,8 +20,8 @@ export const InnerContainerStyled = styled.div<Pick<BasePageProps, 'scrollable'>
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100% - 90px);
     box-sizing: border-box;
+    height: calc(100% - 90px);
 
     ${({ scrollable }) =>
         scrollable

@@ -31,7 +31,6 @@ export const ImageStyled = styled.img`
 
 export const DecriptionStyled = styled.div`
     ${textStyle('LARGEST')}
-
     display: flex;
     align-items: center;
     justify-content: center;

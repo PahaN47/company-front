@@ -11,7 +11,7 @@ export type LoginPayload = {
 };
 
 export type RegisterPayload = {
-    birthDate: Date;
+    birthDate: string;
     email: string;
     firstName: string;
     password: string;

@@ -14,6 +14,10 @@ export const PaperStyled = styled(Paper)`
 export const DatePickerStyled = styled(DatePicker<Dayjs>)`
     width: 100%;
 
+    fieldset {
+        border: none;
+    }
+
     label {
         ${textStyle('MEDIUM')}
         color: ${Color.BLACK_40};
@@ -55,13 +59,16 @@ export const DatePickerStyled = styled(DatePicker<Dayjs>)`
                 background-image: url(${MuiArrowDownIconPath});
                 background-repeat: no-repeat;
                 background-position: center;
+                transition: transform 0.5s;
                 content: '';
             }
         }
-    }
 
-    fieldset {
-        border: none;
+        &.Mui-focused {
+            button::before {
+                transform: rotate(-180deg);
+            }
+        }
     }
 `;
 

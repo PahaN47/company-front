@@ -80,8 +80,8 @@ export const NameStyled = styled.span`
 
 export const DetailContainerStyled = styled.div`
     display: flex;
-    align-items: baseline;
     gap: 50px;
+    align-items: baseline;
 `;
 
 export const DetailStyled = styled.span`
@@ -107,8 +107,8 @@ export const BackButtonStyled = styled.button`
         height: 100%;
 
         path {
-            fill: ${Color.MAIN_DARK};
             transition: fill 0.5s;
+            fill: ${Color.MAIN_DARK};
         }
     }
 

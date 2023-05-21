@@ -12,14 +12,12 @@ export const getOwn = createAsyncThunk<Profile, number, AsyncThunkConfig>(
     `${PROFILE_SLICE_NAME}/GET_OWN`,
     async (id) => {
         const { data } = await axiosInstance.get<Profile>(`${basePath}/${id}`);
-        data.birthDate = new Date(data.birthDate);
         return data;
     },
 );
 
 export const get = createAsyncThunk<Profile, number, AsyncThunkConfig>(`${PROFILE_SLICE_NAME}/GET`, async (id) => {
     const { data } = await axiosInstance.get<Profile>(`${basePath}/${id}`);
-    data.birthDate = new Date(data.birthDate);
     return data;
 });
 
@@ -27,7 +25,6 @@ export const update = createAsyncThunk<Profile, UpdateProfilePayload, AsyncThunk
     `${PROFILE_SLICE_NAME}/update`,
     async ({ id, ...profile }) => {
         const { data } = await axiosInstance.patch<Profile>(`${basePath}/${id}`, profile);
-        data.birthDate = new Date(data.birthDate);
         return data;
     },
 );

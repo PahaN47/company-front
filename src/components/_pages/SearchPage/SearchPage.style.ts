@@ -6,8 +6,8 @@ import { FancyButton } from '~/components/FancyButton';
 import { Color } from '~/const';
 
 export const BasePageStyled = styled(BasePage)`
-    column-gap: 79px;
     padding-top: 54px;
+    column-gap: 79px;
 `;
 
 export const FancyButtonStyled = styled(FancyButton)`
@@ -21,9 +21,9 @@ export const HeaderStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    box-sizing: border-box;
     width: 100vw;
     height: 54px;
-    box-sizing: border-box;
     padding: 0 67px;
     background: ${Color.WHITE};
     border-bottom: 1px solid ${Color.MAIN_SEMI_LIGHT};

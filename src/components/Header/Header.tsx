@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
 
 import { ButtonStyled, CustomAvatarStyled, HeaderStyled } from './Header.style';
@@ -15,6 +15,7 @@ import {
 import { useAuth } from '~/hooks/useAuth';
 import { useAppDispatch, useAppSelector } from '~/store';
 import { AuthAction } from '~/store/auth';
+import { CountriesAction } from '~/store/countries';
 import { ProfileAction } from '~/store/profile';
 
 export const Header = () => {
@@ -24,6 +25,8 @@ export const Header = () => {
     const { own: profile } = useAppSelector((store) => store.profile);
     const { doCookieLogin } = useAppSelector((state) => state.auth);
     const isAuth = !!id;
+
+    const countriesList = useAppSelector((state) => state.countries.list);
 
     useEffect(() => {
         if (!id && doCookieLogin) {
@@ -37,10 +40,11 @@ export const Header = () => {
         }
     }, [dispatch, id]);
 
-    // remove this
-    const handleLoginClick = useCallback(() => {
-        void dispatch(AuthAction.login({ email: 'sas@sas.com', password: 'sas' }));
-    }, [dispatch]);
+    useEffect(() => {
+        if (!countriesList) {
+            void dispatch(CountriesAction.getList());
+        }
+    }, [countriesList, dispatch]);
 
     return (
         <HeaderStyled>
@@ -48,9 +52,7 @@ export const Header = () => {
                 <CustomAvatarStyled src={profile.avatar} href={PROFILE_PAGE_URL} />
             ) : (
                 <CustomLink href={LOGIN_PAGE_URL}>
-                    <ButtonStyled variant="contained" onClick={handleLoginClick}>
-                        Войти
-                    </ButtonStyled>
+                    <ButtonStyled variant="contained">Войти</ButtonStyled>
                 </CustomLink>
             )}
             <CustomLink href={isAuth ? CHATS_PAGE_URL : REGISTER_PAGE_URL}>

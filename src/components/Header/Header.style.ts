@@ -5,10 +5,10 @@ import { CustomAvatar } from '~/components/CustomAvatar';
 import { Color } from '~/const';
 
 export const HeaderStyled = styled.header`
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     height: 90px;
     background: ${Color.MAIN_LIGHT};
     border-bottom: 1px solid ${Color.MAIN};
