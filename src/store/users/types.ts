@@ -1,18 +1,18 @@
 import { Country } from '~/store/countries';
-import { FetchStatus } from '~/types';
+import { FetchStatus, Gender } from '~/types';
 
 export type User = {
     age: number;
     avatar?: string;
     country?: string;
     firstName: string;
-    gender?: string;
+    gender?: Gender;
     id: number;
 };
 
 export type UserQuery = {
     country?: Country;
-    gender?: string;
+    gender?: Gender;
     max_age?: number;
     min_age?: number;
     page?: number;

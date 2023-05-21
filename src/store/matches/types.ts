@@ -3,7 +3,7 @@ import { Profile } from '~/store/profile';
 export type MatchUser = Pick<Profile, 'id' | 'avatar' | 'firstName' | 'lastName'>;
 
 export type Match = {
-    date: Date;
+    date: string;
     id: number;
     initiator: MatchUser;
     reciever: MatchUser;

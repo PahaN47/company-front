@@ -1,13 +1,14 @@
 import { Country } from '~/store/countries';
 import { Gift } from '~/store/gifts';
+import { Gender } from '~/types';
 
 export type Profile = {
     avatar?: string;
-    birthDate: Date;
+    birthDate: string;
     country?: Country;
     email: string;
     firstName: string;
-    gender?: string;
+    gender?: Gender;
     gifts: Gift[];
     id: number;
     lastName?: string;
@@ -15,7 +16,10 @@ export type Profile = {
     timezone?: number;
 };
 
-export type UpdateProfilePayload = Partial<Omit<Profile, 'id' | 'gifts'>> & { id: number };
+export type UpdateProfilePayload = Partial<Omit<Profile, 'id' | 'gifts' | 'country'>> & {
+    country?: number;
+    id: number;
+};
 
 export type ProfileState = {
     other?: Profile;

@@ -26,13 +26,13 @@ export const FancyButtonStyled = styled(CustomButton)<{ buttonType?: FancyButton
 
     &::before {
         position: absolute;
-        z-index: 0;
         top: 0;
         right: 0;
+        z-index: 0;
         width: 100%;
         aspect-ratio: 1 / 1;
-        background-position: center;
         background-repeat: no-repeat;
+        background-position: center;
         border-radius: 50%;
         content: '';
     }

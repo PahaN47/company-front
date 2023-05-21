@@ -1,6 +1,6 @@
 export type Message = {
     chat: number;
-    date: Date;
+    date: string;
     gift?: number;
     id: number;
     message: string;

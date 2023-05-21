@@ -9,9 +9,9 @@ import { textStyle } from '~/mixins';
 export const ContainerStyled = styled.div`
     position: relative;
     display: flex;
+    gap: 35px;
     align-items: center;
     justify-content: space-between;
-    gap: 35px;
     padding: 10px 24px 10px 20px;
     background: ${Color.WHITE};
 
@@ -30,8 +30,8 @@ export const ContainerStyled = styled.div`
 
 export const ProfileLinkStyled = styled(CustomLink)`
     display: flex;
-    align-items: center;
     gap: 35px;
+    align-items: center;
     color: ${Color.BLACK};
     text-decoration: none;
 `;

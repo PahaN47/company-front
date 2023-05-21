@@ -34,24 +34,24 @@ export const ContainerStyled = styled.div<UserStackContainerProps>`
             top: 20px;
         }
 
-        &:not([data-index='0']):not([data-index='1']):not([data-index='2']):not([data-index='accepted']):not(
-                [data-index='rejected']
-            ) {
-            box-shadow: none;
+        &:not([data-index='rejected']):not([data-index='accepted']) {
+            &:not([data-index='0']):not([data-index='1']):not([data-index='2']) {
+                box-shadow: none;
+            }
         }
 
         &[data-index='accepted'] {
             top: 100vh;
-            transform: rotate(60deg);
             right: auto;
             left: 100vw;
+            transform: rotate(60deg);
         }
 
         &[data-index='rejected'] {
             top: 100vh;
-            transform: rotate(-60deg);
             right: 100vw;
             left: auto;
+            transform: rotate(-60deg);
         }
     }
 `;

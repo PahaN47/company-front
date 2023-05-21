@@ -30,7 +30,6 @@ export const getIncoming = createAsyncThunk<Match[], undefined, AsyncThunkConfig
     `${MATCHES_SLICE_NAME}/GET_INCOMING`,
     async () => {
         const { data } = await axiosInstance.get<Match[]>(`${basePath}/incoming`);
-        data.map((match) => (match.date = new Date(match.date)));
         return data;
     },
 );
@@ -39,7 +38,6 @@ export const getOutgoing = createAsyncThunk<Match[], undefined, AsyncThunkConfig
     `${MATCHES_SLICE_NAME}/GET_OUTGOING`,
     async () => {
         const { data } = await axiosInstance.get<Match[]>(`${basePath}/outgoing`);
-        data.map((match) => (match.date = new Date(match.date)));
         return data;
     },
 );
