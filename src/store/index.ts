@@ -7,6 +7,7 @@ import chatsReducer from './chats/reducer';
 import countriesReducer from './countries/reducer';
 import giftsReducer from './gifts/reducer';
 import matchesReducer from './matches/reducer';
+import messagesReducer from './messages/reducer';
 import profileReducer from './profile/reducer';
 import usersReducer from './users/reducer';
 
@@ -19,6 +20,7 @@ const appReducer = combineReducers({
     countries: countriesReducer,
     gifts: giftsReducer,
     matches: matchesReducer,
+    messages: messagesReducer,
     profile: profileReducer,
     users: usersReducer,
 });

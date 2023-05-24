@@ -15,6 +15,7 @@ import {
 import { useAuth } from '~/hooks/useAuth';
 import { useAppDispatch, useAppSelector } from '~/store';
 import { AuthAction } from '~/store/auth';
+import { ChatsAction } from '~/store/chats';
 import { CountriesAction } from '~/store/countries';
 import { ProfileAction } from '~/store/profile';
 
@@ -24,6 +25,7 @@ export const Header = () => {
     const { id } = useAuth();
     const { own: profile } = useAppSelector((store) => store.profile);
     const { doCookieLogin } = useAppSelector((state) => state.auth);
+    const chats = useAppSelector((state) => state.chats.ownChats);
     const isAuth = !!id;
 
     const countriesList = useAppSelector((state) => state.countries.list);
@@ -45,6 +47,12 @@ export const Header = () => {
             void dispatch(CountriesAction.getList());
         }
     }, [countriesList, dispatch]);
+
+    useEffect(() => {
+        if (id && !chats) {
+            void dispatch(ChatsAction.getOwn());
+        }
+    }, [chats, dispatch, id]);
 
     return (
         <HeaderStyled>

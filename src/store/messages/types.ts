@@ -4,7 +4,7 @@ export type Message = {
     gift?: number;
     id: number;
     message: string;
-    status: string;
+    status?: string;
     user: number;
 };
 
