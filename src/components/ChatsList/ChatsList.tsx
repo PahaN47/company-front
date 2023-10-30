@@ -9,7 +9,7 @@ export const ChatsList = ({ className, chats }: ChatsListProps) => {
     return (
         <ContainerStyled className={className}>
             {chats.map(({ id, user }) => (
-                <ChatItem key={id} {...user} />
+                <ChatItem key={id} chatId={id} {...user} />
             ))}
         </ContainerStyled>
     );

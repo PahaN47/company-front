@@ -1,7 +1,9 @@
 import Axios from 'axios';
 
+import { BACKEND_HOST } from './urls';
+
 const defaultConfig = {
-    baseURL: 'http://localhost:8000',
+    baseURL: BACKEND_HOST,
     headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

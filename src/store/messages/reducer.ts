@@ -11,7 +11,7 @@ export const messagesSlice = createSlice({
     initialState,
     reducers: {
         addMessage: (state, { payload: { chatId, message } }: PayloadAction<AddMessagePayload>) => {
-            state[chatId] = [message, ...state[chatId]];
+            state[chatId] = [...state[chatId], message];
         },
         deleteMessage: (state, { payload: { chatId, messageId } }: PayloadAction<DeleteMessagePayload>) => {
             state[chatId] = state[chatId].filter((message) => message.id !== messageId);
