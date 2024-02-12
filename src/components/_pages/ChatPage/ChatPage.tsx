@@ -20,6 +20,7 @@ export const ChatPage = () => {
     const router = useRouter();
     const dispatch = useAppDispatch();
     const bottomRef = useRef<HTMLDivElement>(null);
+    const bottomAnchorElement = bottomRef.current;
     const chatId = +(router.query['id'] ?? 0);
 
     const chatList = useAppSelector((state) => state.chats.ownChats);
@@ -68,8 +69,14 @@ export const ChatPage = () => {
     );
 
     useEffect(() => {
-        bottomRef.current?.scrollIntoView();
-    }, [messages]);
+        if (bottomAnchorElement) {
+            const timer = setTimeout(() => bottomAnchorElement.scrollIntoView(), 100);
+
+            return () => {
+                clearTimeout(timer);
+            };
+        }
+    }, [bottomAnchorElement, messages]);
 
     return (
         <BasePageStyled background={Color.SECOND_LIGHT} scrollable={false}>

@@ -5,7 +5,11 @@ import { SOCKET_HOST } from '~/const';
 const isBrowser = typeof window !== 'undefined';
 
 export const useWS = <Req, Resp>(room?: string) => {
-    const ws = useMemo(() => (isBrowser && room ? new WebSocket(`${SOCKET_HOST}/${room}`) : null), [room]);
+    const isBrowserDeps = isBrowser;
+    const ws = useMemo(
+        () => (isBrowserDeps && room ? new WebSocket(`${SOCKET_HOST}/${room}`) : null),
+        [isBrowserDeps, room],
+    );
     const [data, setData] = useState<Resp | null>(null);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -24,7 +28,7 @@ export const useWS = <Req, Resp>(room?: string) => {
                 connection.close();
             };
         }
-    }, [ws]);
+    }, [room, ws]);
 
     const sendMessage = useCallback(
         (message: Req) => {
