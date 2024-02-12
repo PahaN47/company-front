@@ -25,7 +25,7 @@ export const Header = () => {
     const { id } = useAuth();
     const { own: profile } = useAppSelector((store) => store.profile);
     const { doCookieLogin } = useAppSelector((state) => state.auth);
-    const chats = useAppSelector((state) => state.chats.ownChats);
+    const { needUpdateChats } = useAppSelector((state) => state.chats);
     const isAuth = !!id;
 
     const countriesList = useAppSelector((state) => state.countries.list);
@@ -49,10 +49,10 @@ export const Header = () => {
     }, [countriesList, dispatch]);
 
     useEffect(() => {
-        if (id && !chats) {
+        if (id && needUpdateChats) {
             void dispatch(ChatsAction.getOwn());
         }
-    }, [chats, dispatch, id]);
+    }, [dispatch, id, needUpdateChats]);
 
     return (
         <HeaderStyled>

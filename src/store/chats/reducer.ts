@@ -6,7 +6,7 @@ import { ChatsState } from './types';
 
 const initialState: ChatsState = {
     ownChats: undefined,
-    needUpdateChats: false,
+    needUpdateChats: true,
 };
 
 export const chatsSlice = createSlice({
@@ -20,6 +20,7 @@ export const chatsSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(getOwn.fulfilled, (state, { payload }) => {
             state.ownChats = payload;
+            state.needUpdateChats = false;
         });
     },
 });
